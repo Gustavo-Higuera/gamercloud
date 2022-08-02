@@ -1,3 +1,7 @@
 body {
   background-color: grey;
 }
+
+#searchbtn {
+  width: 50%;
+}
