@@ -93,3 +93,5 @@ function gamerPowerApi() {
     .then(response => console.log(response))
     .catch(err => console.error(err));
 }
+
+$('.dropdown-trigger').dropdown();
