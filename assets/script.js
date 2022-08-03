@@ -39,3 +39,4 @@ function cheapsharkApi(input) {
       console.log(data);
     })
 }
+$('.dropdown-trigger').dropdown();

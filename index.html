@@ -1,41 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"
+      integrity="sha512-17AHGe9uFHHt+QaRYieK7bTdMMHBMi8PeWG99Mf/xEcfBLDCn0Gze8Xcx1KoSZxDnv+KnCC+os/vuQ7jrF/nkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Where Did It Go??????</title>
+  </head>
+  <div></div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"
-    integrity="sha512-17AHGe9uFHHt+QaRYieK7bTdMMHBMi8PeWG99Mf/xEcfBLDCn0Gze8Xcx1KoSZxDnv+KnCC+os/vuQ7jrF/nkw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./assets/style.css">
-  <title>Where Did It Go??????</title>
-</head>
-<div>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Where Did it Go?</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="https://www.stuff.tv/top-10/games/">Top 10 Games</a></li>
+        </ul>
+      </div>
+    </nav>
 
-</div>
+    <div>
+      <input
+        class="col s6"
+        id="search-input"
+        type="search"
+        placeholder="Enter Game Here"
+      />
+      <!-- Dropdown Trigger -->
+      <a class="dropdown-trigger btn" href="#" data-target="dropdown1"
+        >Drop Me!</a
+      >
 
-<body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Where Did it Go?</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Top 10 Movies</a></li>
-        <li><a href="badges.html">Top 10 Shows</a></li>
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="#!">three</a></li>
+        <li>
+          <a href="#!"><i class="material-icons">view_module</i>four</a>
+        </li>
+        <li>
+          <a href="#!"><i class="material-icons">cloud</i>five</a>
+        </li>
       </ul>
+
+      <button
+        class="btn waves-effect waves-light"
+        type="submit"
+        name="action"
+        id="search-btn"
+      >
+        Search
+        <i class="material-icons right"></i>
+      </button>
     </div>
-  </nav>
-
-  <div>
-    <input class="col s6" id="search-input" type="search" placeholder="Movie or Show Name" />
-    <button class="btn waves-effect waves-light" type="submit" name="action" id="search-btn">Search
-      <i class="material-icons right"></i>
-    </button>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="./assets/script.js"></script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
