@@ -2,21 +2,49 @@ var searchBtnEl = $("#search-btn");
 var giveawayBtn = $("#platform-search");
 var contentContainerEl = $("#content-container")
 var selectPlatformEl = $("#select-platform")
+var searchedGamesEl = $("#searched-games");
 
-var dropdownEl = $("#dropdown1");
+var searchedGames = JSON.parse(localStorage.getItem('searchedGames')) || [];
 
 searchBtnEl.on("click", formHandler);
 
 function formHandler() {
   $(contentContainerEl).empty();
   var userInput = $("#search-input").val();
-
   var userInputFormatted = userInput.replace(/ /g, "+");
-  console.log(userInputFormatted);
+
+  if (!searchedGames.includes(userInput)) {
+    searchedGames.push(userInput)
+  }
+  localStorage.setItem('searchedGames', JSON.stringify(searchedGames));
+
+  displaySearchedHistory();
 
   cheapsharkApi(userInputFormatted);
-  gamerPowerApi();
 }
+
+function displaySearchedHistory() {
+  searchedGamesEl.empty();
+  //Loop through searchedGames array
+  searchedGames.forEach(function (game) {
+
+    console.log(game);
+
+    var btn = $('<button class="searched-game-btn"/>')
+    btn.data("game", game);
+    btn.text(game)
+    searchedGamesEl.append(btn)
+
+  })
+}
+
+$(document).on("click", ".searched-game-btn", function(){
+  
+  var game = $(this).data("game");
+  cheapsharkApi(game);
+})
+
+displaySearchedHistory();
 
 giveawayBtn.on("click", platformHandler);
 
