@@ -1,6 +1,8 @@
 var searchBtnEl = $("#search-btn");
 var contentContainerEl = $("#content-container")
 
+var dropdownEl = $("#dropdown1");
+
 searchBtnEl.on("click", formHandler);
 
 function formHandler() {
@@ -92,6 +94,17 @@ function gamerPowerApi() {
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
+
+    var targetEl = dropdownEl.children();
+    targetEl.on("click", function(){
+      targetEl.data("data-platform");
+
+      console.log(targetEl);
+
+    })
+
 }
 
-$('.dropdown-trigger').dropdown();
+$(document).ready(function(){
+  $('select').formSelect();
+});
