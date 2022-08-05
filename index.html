@@ -24,40 +24,28 @@
   </nav>
 
   <section>
+    <p class="flow-text">Would you like to see the cheapest deals on video games? Look no further! Enter your desired game title to see
+      the available deals!</p>
     <input class="col s6" id="search-input" type="search" placeholder="Enter Game Here" />
 
     <button class="btn waves-effect waves-light" type="submit" name="action" id="search-btn">
       Search
       <i class="material-icons right"></i>
     </button>
-    <!-- Dropdown Trigger -->
-    <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Choose a Console</a>
 
-    <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
-      <li>
-        <a href="#!">PlayStation 5</a>
-      </li>
-      <li>
-        <a href="#!">PlayStation 4</a>
-      </li>
-      <li class="divider" tabindex="-1"></li>
-      <li>
-        <a href="#!">Xbox Series X</a>
-      </li>
-      <li>
-        <a href="#!"><i class="material-icons">PC</i></a>
-      </li>
-      <li>
-        <a href="#!"><i class="material-icons">Steam</i></a>
-      </li>
-      <li>
-        <a href="#!">PlayStation 5</a>
-      </li>
-      <li>
-        <a href="#!"><i class="material-icons">Nintendo Switch</i></a>
-      </li>
-    </ul>
+    <div class="input-field col s6">
+      <p>Would you like to see some free giveaways? Please select your gaming platform to see some free giveaways!</p>
+      <select>
+        <option value="" disabled selected>Select Your Gaming Platform</option>
+        <option value="pc">PC</option>
+        <option value="steam">Steam</option>
+        <option value="ps4">PlayStation 4</option>
+        <option value="ps5">PlayStation 5</option>
+        <option value="xbox-one">Xbox One</option>
+        <option value="xbox-series-xs">Xbox Series X/S</option>
+        <option value="switch">Nintendo Switch</option>
+      </select>
+    </div>
   </section>
 
   <section>
