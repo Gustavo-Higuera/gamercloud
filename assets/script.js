@@ -1,5 +1,7 @@
 var searchBtnEl = $("#search-btn");
+var giveawayBtn = $("#platform-search");
 var contentContainerEl = $("#content-container")
+var selectPlatformEl = $("#select-platform")
 
 var dropdownEl = $("#dropdown1");
 
@@ -15,6 +17,15 @@ function formHandler() {
   cheapsharkApi(userInputFormatted);
   gamerPowerApi();
 }
+
+giveawayBtn.on("click", platformHandler);
+
+function platformHandler() {
+  var platformValue = selectPlatformEl.val();
+
+  gamerPowerApi(platformValue);
+}
+
 
 function cheapsharkApi(input) {
   var cheapsharkURL = `https://www.cheapshark.com/api/1.0/games?title=${input}`
@@ -81,7 +92,7 @@ function displayCheapsharkApi(data) {
   }
 }
 
-function gamerPowerApi() {
+function gamerPowerApi(input) {
   const options = {
     method: 'GET',
     headers: {
@@ -89,22 +100,19 @@ function gamerPowerApi() {
       'X-RapidAPI-Host': 'gamerpower.p.rapidapi.com'
     }
   };
-
-  fetch('https://gamerpower.p.rapidapi.com/api/filter?platform=epic-games-store.steam.android&type=game.loot', options)
+  console.log(input)
+  fetch(`https://gamerpower.p.rapidapi.com/api/filter?platform=${input}`, options)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response =>  displayGamerPower(response)
+    )
     .catch(err => console.error(err));
-
-    var targetEl = dropdownEl.children();
-    targetEl.on("click", function(){
-      targetEl.data("data-platform");
-
-      console.log(targetEl);
-
-    })
 
 }
 
-$(document).ready(function(){
+function displayGamerPower(data) {
+  console.log(data);
+}
+
+$(document).ready(function () {
   $('select').formSelect();
 });
