@@ -99,7 +99,7 @@ function displayCheapsharkApi(data) {
     var thumbEl = document.createElement("img");
     thumbEl.setAttribute("src", thumbnailUrl);
     thumbEl.style.height = "150px";
-    thumbEl.style.width = "110px";
+    thumbEl.style.width = "120px";
     cardImageEl.append(thumbEl);
 
     var gameName = data[i].external;

@@ -12,7 +12,6 @@
   <title>Where Did It Go??????</title>
 </head>
 <div></div>
-
 <body>
   <nav>
     <div class="nav-wrapper">
@@ -24,6 +23,8 @@
   </nav>
 
   <section>
+    <div class="row">
+    <div class="col s8">
     <p class="flow-text">Would you like to see the cheapest deals on video games? Look no further! Enter your desired
       game title to see
       the available deals!</p>
@@ -35,9 +36,11 @@
     </button>
     <p>Searched Games: </p>
     <div id="searched-games"></div>
-
+  </div>
+  
+   <div class="col s4">
     <div class="input-field col s6">
-      <p>Would you like to see some free giveaways? Please select your gaming platform to see some free giveaways!</p>
+      <p>Select your gaming platform to see some free giveaways!</p>
       <select id="select-platform">
         <option value="" disabled selected>Select Your Gaming Platform</option>
         <option value="pc">PC</option>
@@ -53,11 +56,12 @@
         <i class="material-icons right"></i>
       </button>
     </div>
+  </div>
   </section>
-
   <section>
-    <div id="content-container" class="row">
-
+    <div class="row">
+      <div class="col s8">
+        <div id="content-container" class="row"></div>
     </div>
   </section>
 </body>
