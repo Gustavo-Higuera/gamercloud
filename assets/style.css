@@ -1,12 +1,11 @@
 .nav-wrapper{
   background-color: rgb(58, 99, 112);
 }
-body {
-  background-color: rgb(95, 138, 155);
-}
-#content-container{
-  background-color: aquamarine;
-}
+ body {
+  /* background-color: rgb(95, 138, 155); */
+  background: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Gaming-Wallpapers.jpg)
+
+} 
 
 #search-input {
   width: 50%;
