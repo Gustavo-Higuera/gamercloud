@@ -5,3 +5,8 @@ body {
 #search-input {
   width: 50%;
 }
+
+.hidden {
+  display: none;
+}
+

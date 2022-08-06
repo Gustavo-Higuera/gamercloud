@@ -9,16 +9,20 @@
     integrity="sha512-17AHGe9uFHHt+QaRYieK7bTdMMHBMi8PeWG99Mf/xEcfBLDCn0Gze8Xcx1KoSZxDnv+KnCC+os/vuQ7jrF/nkw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/style.css" />
-  <title>Where Did It Go??????</title>
+  <title>GamerCloud</title>
 </head>
 <div></div>
 
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Where Did it Go?</a>
+      <a href="#" class="brand-logo">GamerCloud</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="https://www.stuff.tv/top-10/games/">Top 10 Games</a></li>
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn' href='#' data-target='searched-games'>Searched Games</a>
+        <!-- Dropdown Structure -->
+        <ul id='searched-games' class='dropdown-content'>
+        </ul>
       </ul>
     </div>
   </nav>
@@ -33,31 +37,31 @@
       Search
       <i class="material-icons right"></i>
     </button>
-    <p>Searched Games: </p>
-    <div id="searched-games"></div>
-
-    <div class="input-field col s6">
-      <p>Would you like to see some free giveaways? Please select your gaming platform to see some free giveaways!</p>
-      <select id="select-platform">
-        <option value="" disabled selected>Select Your Gaming Platform</option>
-        <option value="pc">PC</option>
-        <option value="steam">Steam</option>
-        <option value="ps4">PlayStation 4</option>
-        <option value="ps5">PlayStation 5</option>
-        <option value="xbox-one">Xbox One</option>
-        <option value="xbox-series-xs">Xbox Series X/S</option>
-        <option value="switch">Nintendo Switch</option>
-      </select>
-      <button class="btn waves-effect waves-light" type="submit" name="action" id="platform-search">
-        Search Giveaways
-        <i class="material-icons right"></i>
-      </button>
-    </div>
   </section>
 
   <section>
     <div id="content-container" class="row">
-
+      <div id="cheapshark-content" class="col s6"></div>
+      <div id="gamerpower-content" class="col s6">
+        <div id="giveaway-content" class="input-field col s6 hidden">
+          <p>Would you like to see some free giveaways? Please select your gaming platform to see some free giveaways!
+          </p>
+          <select id="select-platform">
+            <option value="" disabled selected>Select Your Gaming Platform</option>
+            <option value="pc">PC</option>
+            <option value="steam">Steam</option>
+            <option value="ps4">PlayStation 4</option>
+            <option value="ps5">PlayStation 5</option>
+            <option value="xbox-one">Xbox One</option>
+            <option value="xbox-series-xs">Xbox Series X/S</option>
+            <option value="switch">Nintendo Switch</option>
+          </select>
+          <button class="btn waves-effect waves-light" type="submit" name="action" id="platform-search">
+            Search Giveaways
+            <i class="material-icons right"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </body>

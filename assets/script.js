@@ -1,6 +1,6 @@
 var searchBtnEl = $("#search-btn");
 var giveawayBtn = $("#platform-search");
-var contentContainerEl = $("#content-container")
+var cheapsharkContentEl = $("#cheapshark-content")
 var selectPlatformEl = $("#select-platform")
 var searchedGamesEl = $("#searched-games");
 
@@ -9,31 +9,36 @@ var searchedGames = JSON.parse(localStorage.getItem('searchedGames')) || [];
 searchBtnEl.on("click", formHandler);
 
 function formHandler() {
-  $(contentContainerEl).empty();
+  $(cheapsharkContentEl).empty();
   var userInput = $("#search-input").val();
   var userInputFormatted = userInput.replace(/ /g, "+");
 
   if (!searchedGames.includes(userInput)) {
     searchedGames.push(userInput)
+    displaySearchedHistory();
+
   }
   localStorage.setItem('searchedGames', JSON.stringify(searchedGames));
 
-  displaySearchedHistory();
+  $("#giveaway-content").removeClass("hidden");
+
 
   cheapsharkApi(userInputFormatted);
 }
 
 function displaySearchedHistory() {
-  searchedGamesEl.empty();
+  // searchedGamesEl.empty();
   //Loop through searchedGames array
   searchedGames.forEach(function (game) {
 
     console.log(game);
 
-    var btn = $('<button class="searched-game-btn"/>')
+    var btn = $('<li class="searched-game-li"/>')
     btn.data("game", game);
     btn.text(game)
     searchedGamesEl.append(btn)
+
+    console.log(btn)
 
   })
 }
@@ -71,13 +76,13 @@ function cheapsharkApi(input) {
 }
 
 function displayCheapsharkApi(data) {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 6; i++) {
     var dealID = data[i].cheapestDealID;
     var dealUrl = `https://www.cheapshark.com/redirect?dealID=${dealID}`;
 
-    var cardEl = document.createElement("div");
-    cardEl.classList.add("card");
-    contentContainerEl.append(cardEl);
+    var cardEl = $("<div/>");
+    cardEl.addClass("card col s12");
+    cheapsharkContentEl.append(cardEl);
 
     var cardTitleEl = document.createElement("div");
     cardTitleEl.classList.add("card-title");
@@ -98,8 +103,8 @@ function displayCheapsharkApi(data) {
     var thumbnailUrl = data[i].thumb;
     var thumbEl = document.createElement("img");
     thumbEl.setAttribute("src", thumbnailUrl);
-    thumbEl.style.height = "150px";
-    thumbEl.style.width = "110px";
+    thumbEl.style.height = "auto";
+    thumbEl.style.width = "auto";
     cardImageEl.append(thumbEl);
 
     var gameName = data[i].external;
@@ -143,4 +148,10 @@ function displayGamerPower(data) {
 
 $(document).ready(function () {
   $('select').formSelect();
+});
+
+$('.dropdown-trigger').dropdown({
+  coverTrigger:false,
+  hover:true,
+  alignment: 'right'
 });
