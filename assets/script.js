@@ -1,6 +1,7 @@
 var searchBtnEl = $("#search-btn");
 var giveawayBtn = $("#platform-search");
 var cheapsharkContentEl = $("#cheapshark-content")
+var gamerpowerContentEl = $("#gamerpower-content")
 
 var searchedGames = JSON.parse(localStorage.getItem('searchedGames')) || [];
 
@@ -140,7 +141,52 @@ function gamerPowerApi(input) {
 }
 
 function displayGamerPower(data) {
+
   console.log(data);
+  for (let i = 0; i < data.length; i++) {
+
+    var cardEl = $("<div/>");
+    cardEl.addClass("card col s12");
+    gamerpowerContentEl.append(cardEl);
+
+    var cardTitleEl = $("<div/>");
+    cardTitleEl.addClass("card-title");
+    cardEl.append(cardTitleEl);
+
+    var cardImageEl = $("<div/>");
+    cardImageEl.addClass("card-image");
+    cardEl.append(cardImageEl);
+
+    var cardContentEl = $("<div/>");
+    cardContentEl.addClass("card-content");
+    cardEl.append(cardContentEl);
+
+    var cardActionEl = $("<div/>");
+    cardActionEl.addClass("card-action");
+    cardEl.append(cardActionEl);
+
+    var thumbnailUrl = data[i].thumbnail;
+    var thumbEl = $("<img/>");
+    thumbEl.attr("src", thumbnailUrl);
+    thumbEl.width("auto").height("auto");
+    cardImageEl.append(thumbEl);
+
+    var giveawayName = data[i].title;
+    var giveawayNameEl = $("<h5/>");
+    giveawayNameEl.text(giveawayName);
+    cardTitleEl.append(giveawayNameEl)
+
+    var giveawayValue = data[i].worth;
+    var giveawayValueEl = $("<p/>");
+    giveawayValueEl.text(`Cheapest Price: $${giveawayValue}`);
+    cardContentEl.append(giveawayValueEl)
+
+    var giveawayLinkEl = $("<a/>");
+    giveawayLinkEl.text("Click Here to Get Your Deal!");
+    giveawayLinkEl.attr("href", data[i].open_giveaway);
+    giveawayLinkEl.attr("target", "_blank");
+    cardActionEl.append(giveawayLinkEl)
+  }
 }
 
 $(document).ready(function () {
