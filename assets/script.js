@@ -9,31 +9,37 @@ searchBtnEl.on("click", gameSearchHandler);
 
 function gameSearchHandler() {
   $(cheapsharkContentEl).empty();
-  var userInput = $("#search-input").val();
-  var userInputFormatted = userInput.replace(/ /g, "+");
+  var userInput = $("#search-input").val(); // This is storing the users input into a variable
+  var userInputFormatted = userInput.replace(/ /g, "+"); // this is replacing all spaces in the users input with + 
 
-  if (!searchedGames.includes(userInput)) {
-    searchedGames.push(userInput)
-    displaySearchedHistory();
 
+  if (!searchedGames.includes(userInput)) { // if the users input isn't already stored in the searchedGames array, it pull push it
+    if (!userInput.trim() || !userInput) { // trim is checking for spaces in userInput
+      $("#error-message").append("<p/>").addClass("red-text").text("Please enter a game!"); // if the input is left empty this will append
+    } else {
+      searchedGames.push(userInput)
+      displaySearchedHistory();
+
+      localStorage.setItem('searchedGames', JSON.stringify(searchedGames));
+    }
+  } else {
+    $("#error-message").empty(); // if the user adds input value... the error will clear if it was appended
+    $("#giveaway-content").removeClass("hidden");   // when the search btn is clicked, the giveaway content will be visible
+
+    cheapsharkApi(userInputFormatted);
   }
-
-  localStorage.setItem('searchedGames', JSON.stringify(searchedGames));
-
-  $("#giveaway-content").removeClass("hidden");   // when the search btn is clicked, the giveaway content will be visible
-
-  cheapsharkApi(userInputFormatted);
 }
 
 function displaySearchedHistory() {
   var searchedGamesEl = $("#searched-games");
+  searchedGamesEl.empty();
 
-  //Loop through searchedGames array
-  searchedGames.forEach(function (game) {
+
+  searchedGames.slice(-5).forEach(function (game) { //Looping through searchedGames array
 
     console.log(game);
-
-    var btn = $('<li class="searched-game-li"/>')
+    
+    var btn = $('<li class="searched-game-li"/>') // each game in the searched
     btn.data("game", game);
     btn.text(game)
     searchedGamesEl.append(btn)
@@ -46,6 +52,7 @@ $(document).on("click", ".searched-game-li", function () {
   $(cheapsharkContentEl).empty();
 
   var game = $(this).data("game");
+  $("#giveaway-content").removeClass("hidden");
   cheapsharkApi(game);
 })
 
@@ -83,40 +90,31 @@ function displayCheapsharkApi(data) {
     cardEl.addClass("card col s12");
     cheapsharkContentEl.append(cardEl);
 
-    var cardTitleEl = $("<div/>");
-    cardTitleEl.addClass("card-title");
+    var cardTitleEl = $("<div/>").addClass("card-title");
     cardEl.append(cardTitleEl);
 
-    var cardImageEl = $("<div/>");
-    cardImageEl.addClass("card-image");
+    var cardImageEl = $("<div/>").addClass("card-image");
     cardEl.append(cardImageEl);
 
-    var cardContentEl = $("<div/>");
-    cardContentEl.addClass("card-content");
+    var cardContentEl = $("<div/>").addClass("card-content");
     cardEl.append(cardContentEl);
 
-    var cardActionEl = $("<div/>");
-    cardActionEl.addClass("card-action");
+    var cardActionEl = $("<div/>").addClass("card-action");
     cardEl.append(cardActionEl);
 
     var thumbnailUrl = data[i].thumb;
-    var thumbEl = $("<img/>");
-    thumbEl.attr("src", thumbnailUrl);
-    thumbEl.width("auto").height("auto");
+    var thumbEl = $("<img/>").attr("src", thumbnailUrl).width("auto").height("auto");
     cardImageEl.append(thumbEl);
 
     var gameName = data[i].external;
-    var gameNameEl = $("<h5/>");
-    gameNameEl.text(gameName);
+    var gameNameEl = $("<h5/>").text(gameName);
     cardTitleEl.append(gameNameEl)
 
     var gamePrice = data[i].cheapest;
-    var gamePriceEl = $("<p/>");
-    gamePriceEl.text(`Cheapest Price: $${gamePrice}`);
+    var gamePriceEl = $("<p/>").text(`Cheapest Price: $${gamePrice}`);
     cardContentEl.append(gamePriceEl)
 
-    var dealEl = $("<a/>");
-    dealEl.text("Click Here to Get Your Deal!");
+    var dealEl = $("<a/>").text("Click Here to Get Your Deal!");
     dealEl.attr("href", dealUrl);
     dealEl.attr("target", "_blank");
     cardActionEl.append(dealEl)
@@ -137,52 +135,44 @@ function gamerPowerApi(input) {
     .then(response => displayGamerPower(response)
     )
     .catch(err => console.error(err));
-
 }
 
 function displayGamerPower(data) {
 
+  var giveawayResultsEl = $("#giveaway-results");
+  giveawayResultsEl.empty();
+
   console.log(data);
-  for (let i = 0; i < data.length; i++) {
+  for (let i = 0; i < 3; i++) {
 
-    var cardEl = $("<div/>");
-    cardEl.addClass("card col s12");
-    gamerpowerContentEl.append(cardEl);
+    var cardEl = $("<div/>").addClass("card col s12");
+    giveawayResultsEl.append(cardEl);
 
-    var cardTitleEl = $("<div/>");
-    cardTitleEl.addClass("card-title");
+    var cardTitleEl = $("<div/>").addClass("card-title");
     cardEl.append(cardTitleEl);
 
-    var cardImageEl = $("<div/>");
-    cardImageEl.addClass("card-image");
+    var cardImageEl = $("<div/>").addClass("card-image");
     cardEl.append(cardImageEl);
 
-    var cardContentEl = $("<div/>");
-    cardContentEl.addClass("card-content");
+    var cardContentEl = $("<div/>").addClass("card-content");
     cardEl.append(cardContentEl);
 
-    var cardActionEl = $("<div/>");
-    cardActionEl.addClass("card-action");
+    var cardActionEl = $("<div/>").addClass("card-action");
     cardEl.append(cardActionEl);
 
     var thumbnailUrl = data[i].thumbnail;
-    var thumbEl = $("<img/>");
-    thumbEl.attr("src", thumbnailUrl);
-    thumbEl.width("auto").height("auto");
+    var thumbEl = $("<img/>").attr("src", thumbnailUrl).width("auto").height("auto");
     cardImageEl.append(thumbEl);
 
     var giveawayName = data[i].title;
-    var giveawayNameEl = $("<h5/>");
-    giveawayNameEl.text(giveawayName);
+    var giveawayNameEl = $("<h5/>").text(giveawayName);
     cardTitleEl.append(giveawayNameEl)
 
-    var giveawayValue = data[i].worth;
-    var giveawayValueEl = $("<p/>");
-    giveawayValueEl.text(`Cheapest Price: $${giveawayValue}`);
-    cardContentEl.append(giveawayValueEl)
+    var giveawayPlatforms = data[i].platforms;
+    var giveawayPlatformsEl = $("<p/>").text(`Platforms: ${giveawayPlatforms}`);
+    cardContentEl.append(giveawayPlatformsEl)
 
-    var giveawayLinkEl = $("<a/>");
-    giveawayLinkEl.text("Click Here to Get Your Deal!");
+    var giveawayLinkEl = $("<a/>").text("Click Here to Get Your Deal!");
     giveawayLinkEl.attr("href", data[i].open_giveaway);
     giveawayLinkEl.attr("target", "_blank");
     cardActionEl.append(giveawayLinkEl)
@@ -193,9 +183,6 @@ $(document).ready(function () {
   $('select').formSelect();
 });
 
-$('.dropdown-trigger').dropdown({
-  coverTrigger: false,
-  alignment: 'right'
-});
+$('.dropdown-trigger').dropdown();
 
 displaySearchedHistory();

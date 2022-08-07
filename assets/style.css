@@ -12,6 +12,18 @@ body {
   width: 50%;
 }
 
+.dropdown-content {
+  top: -40px;
+  left: -0px;
+}
+
+.dropdown-content li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
 .hidden {
   display: none;
 }
