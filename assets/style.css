@@ -24,15 +24,19 @@
   border-radius: 20px;
 }
 
-.container {
-  margin-top: 120px;
+#container {
+  margin: 5% 2%;
+}
+
+.caret {
+  display: none;
 }
 
 .col.s7{
   background-color: white;
   color: rgb(150, 43, 43);
   border-radius: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;
   font-size: 20px;
   padding-right: 50px;
   padding-left: 50px;
@@ -52,6 +56,7 @@ padding-top: 100px;
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 body {
   /* background-color: rgb(95, 138, 155); */
   background: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Gaming-Wallpapers.jpg);
@@ -61,6 +66,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
 .flow-text {
   /* color: rgb(150, 43, 43); */
   text-align: center;
@@ -80,10 +86,19 @@ body {
   align-items: center;
 }
 
-.hidden {
-  display: none;
-}
 #select-platform {
   text-align: center;
 }
 
+.select-wrapper {
+  width: 45%;
+}
+
+#platform-search-btn {
+  margin-bottom: 18px;
+}
+
+.card {
+  background-color: antiquewhite;
+  text-align: center;
+}

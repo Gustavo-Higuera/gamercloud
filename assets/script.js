@@ -1,5 +1,5 @@
 var searchBtnEl = $("#search-btn");
-var giveawayBtn = $("#platform-search");
+var giveawayBtn = $("#platform-search-btn");
 var cheapsharkContentEl = $("#cheapshark-content")
 var gamerpowerContentEl = $("#giveaway-content")
 
@@ -107,7 +107,14 @@ function displayCheapsharkApi(data) {
     cardEl.append(cardActionEl);
 
     var thumbnailUrl = data[i].thumb;
-    var thumbEl = $("<img/>").attr("src", thumbnailUrl).width("auto").height("auto");
+    var thumbEl = $("<img/>").attr("src", thumbnailUrl)
+    thumbEl.css({
+      "width": "auto",
+      "height": "auto",
+      "min-width": "180px",
+      "display": "block",
+      "margin": "auto"
+    })
     cardImageEl.append(thumbEl);
 
     var gameName = data[i].external;
@@ -165,7 +172,14 @@ function displayGamerPower(data) {
     cardEl.append(cardActionEl);
 
     var thumbnailUrl = data[i].thumbnail;
-    var thumbEl = $("<img/>").attr("src", thumbnailUrl).width("auto").height("auto");
+    var thumbEl = $("<img/>").attr("src", thumbnailUrl)
+    thumbEl.css({
+      "width": "auto",
+      "height": "auto",
+      "min-width": "180px",
+      "display": "block",
+      "margin": "auto"
+    })
     cardImageEl.append(thumbEl);
 
     var giveawayName = data[i].title;
