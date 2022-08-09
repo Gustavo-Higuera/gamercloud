@@ -24,12 +24,14 @@
   border-radius: 20px;
 }
 
+.container {
+  margin-top: 120px;
+}
+
 .col.s7{
-  
   background-color: white;
   color: rgb(150, 43, 43);
   border-radius: 20px;
-  margin-top: 100px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 20px;
   padding-right: 50px;
@@ -42,7 +44,6 @@ padding-top: 100px;
   background-color: rgb(122, 122, 113);
   color: black;
   border-radius: 20px;
-  margin-top: 120px;
   font-size: 20px;
 }
 .text {

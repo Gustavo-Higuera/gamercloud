@@ -1,33 +1,35 @@
 var searchBtnEl = $("#search-btn");
 var giveawayBtn = $("#platform-search");
 var cheapsharkContentEl = $("#cheapshark-content")
-var gamerpowerContentEl = $("#gamerpower-content")
+var gamerpowerContentEl = $("#giveaway-content")
 
 var searchedGames = JSON.parse(localStorage.getItem('searchedGames')) || [];
 
 searchBtnEl.on("click", gameSearchHandler);
 
-function gameSearchHandler() {
+function gameSearchHandler(event) {
+  event.preventDefault();
+
+  $("#error-message").empty(); // if the user adds input value... the error will clear if it was appended
+
+
   $(cheapsharkContentEl).empty();
   var userInput = $("#search-input").val(); // This is storing the users input into a variable
   var userInputFormatted = userInput.replace(/ /g, "+"); // this is replacing all spaces in the users input with + 
 
-
-  if (!searchedGames.includes(userInput)) { // if the users input isn't already stored in the searchedGames array, it pull push it
-    if (!userInput.trim() || !userInput) { // trim is checking for spaces in userInput
-      $("#error-message").append("<p/>").addClass("red-text").text("Please enter a game!"); // if the input is left empty this will append
-    } else {
-      searchedGames.push(userInput)
-      displaySearchedHistory();
-
-      localStorage.setItem('searchedGames', JSON.stringify(searchedGames));
-    }
-  } else {
-    $("#error-message").empty(); // if the user adds input value... the error will clear if it was appended
-    $("#giveaway-content").removeClass("hidden");   // when the search btn is clicked, the giveaway content will be visible
-
-    cheapsharkApi(userInputFormatted);
+  if (!userInput.trim() || !userInput) { // trim is checking for spaces in userInput
+    $("#error-message").append("<p/>").addClass("red-text").text("Please enter a game!"); // if the input is left empty this will append
+    return
   }
+  if (!searchedGames.includes(userInput)) { // if the users input isn't already stored in the searchedGames array, it pull push it
+    searchedGames.push(userInput)
+    displaySearchedHistory();
+
+    localStorage.setItem('searchedGames', JSON.stringify(searchedGames));
+
+  }
+
+  cheapsharkApi(userInputFormatted);
 }
 
 function displaySearchedHistory() {
@@ -38,7 +40,7 @@ function displaySearchedHistory() {
   searchedGames.slice(-5).forEach(function (game) { //Looping through searchedGames array
 
     console.log(game);
-    
+
     var btn = $('<li class="searched-game-li"/>') // each game in the searched
     btn.data("game", game);
     btn.text(game)
@@ -58,7 +60,9 @@ $(document).on("click", ".searched-game-li", function () {
 
 giveawayBtn.on("click", platformHandler); // when the giveaway search button is clicked, the platformHandler function will execute
 
-function platformHandler() {
+function platformHandler(event) {
+  event.preventDefault();
+
   var selectPlatformEl = $("#select-platform")
   var platformValue = selectPlatformEl.val();
 
