@@ -172,7 +172,7 @@ function displayGamerPower(data) {
     var giveawayPlatformsEl = $("<p/>").text(`Platforms: ${giveawayPlatforms}`);
     cardContentEl.append(giveawayPlatformsEl)
 
-    var giveawayLinkEl = $("<a/>").text("Click Here to Get Your Deal!");
+    var giveawayLinkEl = $("<a/>").text("Click Here For Giveaway!");
     giveawayLinkEl.attr("href", data[i].open_giveaway);
     giveawayLinkEl.attr("target", "_blank");
     cardActionEl.append(giveawayLinkEl)
