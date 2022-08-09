@@ -5,7 +5,8 @@
 }
 
 * {
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: "IBM Plex Sans Condensed", sans-serif;
   font-weight: bold;
 }
 
@@ -128,6 +129,8 @@ body {
 
 .select-wrapper {
   width: 45%;
+  color: black;
+}
 }
 
 #platform-search-btn {
