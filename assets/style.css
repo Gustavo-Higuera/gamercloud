@@ -1,11 +1,12 @@
 :root {
   --red-color: rgb(150, 43, 43);
-  --transparent-color: rgb(255 255 255 / 70%);
+  --transparent-color: rgba(255, 255, 255, 0.7);
   --white: white;
 }
 
 * {
-  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 }
 
 .nav-wrapper {
@@ -14,7 +15,6 @@ background-color: #000000;
   padding-top: 20px;
   padding-bottom: 80px;
 }
-
 .brand-logo.center {
   font-size: 50px;
 }
@@ -54,13 +54,14 @@ background-color: #000000;
 
 .col.s6 {
   background-color: var(--transparent-color);
-  color: var(--red-color);
+  color: white;
   border-radius: 20px;
   font-size: 20px;
   padding-right: 50px;
   padding-left: 50px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 80px;
 }
 
 #cheapshark-content {
@@ -75,9 +76,11 @@ background-color: #000000;
 
 .col.s4 {
   background-color: var(--transparent-color);
-  color: var(--red-color);
+  color: white;
   border-radius: 20px;
   font-size: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 option {
@@ -135,4 +138,6 @@ body {
   background: linear-gradient(60deg, #444, #000000);
   text-align: center;
   margin-right: 5%;
+  border-radius: 10px;
+
 }

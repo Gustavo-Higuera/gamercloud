@@ -113,9 +113,10 @@ function displayCheapsharkApi(data) {
       "height": "auto",
       "display": "block",
       "max-height": "225px",
-      "min-height": "225px",
-      "max-width": "321.3px",
-      "margin": "auto"
+      "min-height": "150px",
+      "max-width": "150px",
+      "margin": "auto",
+      "border-radius": "8px",
     })
     cardImageEl.append(thumbEl);
 
@@ -179,7 +180,11 @@ function displayGamerPower(data) {
       "width": "auto",
       "height": "auto",
       "display": "block",
-      "margin": "auto"
+      "max-height": "225px",
+      "min-height": "150px",
+      "max-width": "fit-content",
+      "margin": "auto",
+      "border-radius": "8px",
     })
     cardImageEl.append(thumbEl);
 
