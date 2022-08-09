@@ -8,72 +8,80 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"
     integrity="sha512-17AHGe9uFHHt+QaRYieK7bTdMMHBMi8PeWG99Mf/xEcfBLDCn0Gze8Xcx1KoSZxDnv+KnCC+os/vuQ7jrF/nkw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&family=IBM+Plex+Sans+Condensed&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="./assets/style.css" />
   <title>GamerCloud</title>
+</head>
 
-  <head>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">GamerCloud</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <!-- Dropdown Trigger -->
-          <a class='dropdown-trigger btn' href='#' data-target='searched-games'>Searched Games</a>
-          <!-- Dropdown Structure -->
-          <ul id='searched-games' class='dropdown-content'></ul>
-        </ul>
-      </div>
-    </nav>
-  </head>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">GamerCloud</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+      <!-- Dropdown Trigger -->
+      <a class='dropdown-trigger btn' href='#' data-target='searched-games'>Searched Games</a>
+      <!-- Dropdown Structure -->
+      <ul id='searched-games' class='dropdown-content'></ul>
+
+  </div>
+</nav>
+
 
 <body>
   <div id="container">
     <div class="row">
-      <section id="cheapshark-container" class="col s7">
-        <p class="flow-text">Would you like to see the cheapest deals on video games?
-          Look no further! Enter your desired
-          game title to see
-          the available deals!</p>
+      <section id="cheapshark-container" class="col s6 z-depth-4"">
+        <p class=" flow-text">Would you like to see the cheapest deals on video games?
+        Look no further! Enter your desired
+        game title to see
+        the available deals!</p>
         <p id="error-message"></p>
         <form>
-          <input class="col s6" id="search-input" type="search" placeholder="Enter Game Here" />
+          <input id="search-input" type="search" placeholder="Enter Game Here" />
           <button class="btn waves-effect waves-light" type="submit" name="action" id="search-btn">
-            Search
-            <i class="material-icons right"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
         <div id="cheapshark-content"></div>
       </section>
 
-      <div class="col s1"></div>
-      
+      <div class="col s2"></div>
 
-      <section id="gamerpower-container" class="col s4">
-        <div id="gamerpower-content">
-          <p class="text"> Please select your gaming platform to see giveaways such as DLC packs, skins, games & more!
-          </p>
-          <form>
-            <select id="select-platform">
-              <option value="" disabled selected>Select Your Gaming Platform</option>
-              <option value="pc">PC</option>
-              <option value="steam">Steam</option>
-              <option value="ps4">PlayStation 4</option>
-              <option value="ps5">PlayStation 5</option>
-              <option value="xbox-one">Xbox One</option>
-              <option value="xbox-series-xs">Xbox Series X/S</option>
-              <option value="switch">Nintendo Switch</option>
-            </select>
-            <button class="btn waves-effect waves-light" type="submit" name="action" id="platform-search-btn">
-              Search
-              <i class="material-icons right"></i>
-            </button>
-          </form>
-          <div id="giveaway-results">
-            <div id="giveaway-content" class="col s4"></div>
-          </div>
+
+      <section id="gamerpower-container" class="col s4 z-depth-4"">
+        <div id=" gamerpower-content">
+        <p class="text"> Please select your gaming platform to see giveaways such as DLC packs, skins, games & more!
+        </p>
+        <form>
+          <select id="select-platform">
+            <option value="" disabled selected>Select Your Gaming Platform</option>
+            <option value="pc">PC</option>
+            <option value="steam">Steam</option>
+            <option value="ps4">PlayStation 4</option>
+            <option value="ps5">PlayStation 5</option>
+            <option value="xbox-one">Xbox One</option>
+            <option value="xbox-series-xs">Xbox Series X/S</option>
+            <option value="switch">Nintendo Switch</option>
+          </select>
+          <button class="btn waves-effect waves-light" type="submit" name="action" id="platform-search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <div id="giveaway-results">
+          <div id="giveaway-content" class="col s4"></div>
         </div>
-      </section>
-
     </div>
+    </section>
+
+  </div>
   </div>
 </body>
 

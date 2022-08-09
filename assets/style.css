@@ -1,13 +1,24 @@
+:root {
+  --red-color: rgb(150, 43, 43);
+  --transparent-color: rgb(255 255 255 / 70%);
+  --white: white;
+}
+
+* {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
 .nav-wrapper {
-  background-color: rgb(103, 111, 138);
+background-color: #000000;
   font-weight: bold;
   padding-top: 20px;
   padding-bottom: 80px;
 }
+
 .brand-logo.center {
   font-size: 50px;
-  font-family: monospace;
 }
+
 .dropdown-content {
   top: -40px;
   left: -0px;
@@ -19,48 +30,70 @@
   align-items: center;
   border: 1px solid black;
 }
+
 #search-input {
   align-items: center;
   border-radius: 20px;
 }
 
+.row {
+  width: auto;
+}
+
 #container {
-  margin: 5% 2%;
+  margin: 4% 2%;
 }
 
 .caret {
   display: none;
 }
 
-.col.s7{
-  background-color: white;
-  color: rgb(150, 43, 43);
+::placeholder {
+  color: black;
+}
+
+.col.s6 {
+  background-color: var(--transparent-color);
+  color: var(--red-color);
   border-radius: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, ‘Times New Roman’, serif;
   font-size: 20px;
   padding-right: 50px;
   padding-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.col.s1{
-padding-top: 100px;
+
+#cheapshark-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.col.s4{
-  background-color: rgb(122, 122, 113);
-  color: black;
+
+.col.s2 {
+  padding-top: 100px;
+}
+
+.col.s4 {
+  background-color: var(--transparent-color);
+  color: var(--red-color);
   border-radius: 20px;
   font-size: 20px;
 }
+
+option {
+  color: black;
+}
+
 .text {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
   /* background-color: rgb(95, 138, 155); */
   background: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Gaming-Wallpapers.jpg);
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
   background-attachment: fixed;
@@ -68,15 +101,15 @@ body {
 }
 
 .flow-text {
-  /* color: rgb(150, 43, 43); */
+  /* color: var(--red-color); */
   text-align: center;
   font-size: 40px;
   font-weight: bold;
   /* margin-top: 50px; */
 }
+
 .btn {
   font-size: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border-radius: 12px;
   font-weight: bold;
   background-color: black;
@@ -99,6 +132,7 @@ body {
 }
 
 .card {
-  background-color: antiquewhite;
+  background: linear-gradient(60deg, #444, #000000);
   text-align: center;
+  margin-right: 5%;
 }
