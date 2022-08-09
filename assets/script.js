@@ -91,7 +91,7 @@ function displayCheapsharkApi(data) {
     var dealUrl = `https://www.cheapshark.com/redirect?dealID=${dealID}`;
 
     var cardEl = $("<div/>");
-    cardEl.addClass("card col s12");
+    cardEl.addClass("card col s5");
     cheapsharkContentEl.append(cardEl);
 
     var cardTitleEl = $("<div/>").addClass("card-title");
@@ -111,8 +111,10 @@ function displayCheapsharkApi(data) {
     thumbEl.css({
       "width": "auto",
       "height": "auto",
-      "min-width": "180px",
       "display": "block",
+      "max-height": "225px",
+      "min-height": "225px",
+      "max-width": "321.3px",
       "margin": "auto"
     })
     cardImageEl.append(thumbEl);
@@ -176,7 +178,6 @@ function displayGamerPower(data) {
     thumbEl.css({
       "width": "auto",
       "height": "auto",
-      "min-width": "180px",
       "display": "block",
       "margin": "auto"
     })
@@ -188,7 +189,11 @@ function displayGamerPower(data) {
 
     var giveawayPlatforms = data[i].platforms;
     var giveawayPlatformsEl = $("<p/>").text(`Platforms: ${giveawayPlatforms}`);
-    cardContentEl.append(giveawayPlatformsEl)
+    cardTitleEl.append(giveawayPlatformsEl)
+
+    var giveawayDescription = data[i].description;
+    var giveawayDescriptionEl = $("<p/>").text(giveawayDescription);
+    cardContentEl.append(giveawayDescriptionEl);
 
     var giveawayLinkEl = $("<a/>").text("Click Here For Giveaway!");
     giveawayLinkEl.attr("href", data[i].open_giveaway);
@@ -202,5 +207,16 @@ $(document).ready(function () {
 });
 
 $('.dropdown-trigger').dropdown();
+
+$(document).ready(function () {
+  $('input.autocomplete').autocomplete({
+    data: {
+      "Apple": null,
+      "Microsoft": null,
+      "Google": null,
+      "Gargle": null
+    }
+  });
+});
 
 displaySearchedHistory();
