@@ -1,17 +1,13 @@
-.nav-wrapper{
-  background-color: rgb(58, 99, 112);
+.nav-wrapper {
+  background-color: rgb(103, 111, 138);
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 80px;
 }
-
-body {
-  /* background-color: rgb(95, 138, 155); */
-  background: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Gaming-Wallpapers.jpg)
-
-} 
-
-#search-input {
-  width: 50%;
+.brand-logo.center {
+  font-size: 50px;
+  font-family: monospace;
 }
-
 .dropdown-content {
   top: -40px;
   left: -0px;
@@ -23,8 +19,65 @@ body {
   align-items: center;
   border: 1px solid black;
 }
+#search-input {
+  align-items: center;
+  border-radius: 20px;
+}
+
+.col.s7{
+  
+  background-color: white;
+  color: rgb(150, 43, 43);
+  border-radius: 20px;
+  margin-top: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.col.s1{
+padding-top: 100px;
+}
+.col.s4{
+  background-color: rgb(122, 122, 113);
+  color: black;
+  border-radius: 20px;
+  margin-top: 120px;
+  font-size: 20px;
+}
+.text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body {
+  /* background-color: rgb(95, 138, 155); */
+  background: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Gaming-Wallpapers.jpg)
+}
+.flow-text {
+  /* color: rgb(150, 43, 43); */
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  /* margin-top: 50px; */
+}
+.btn {
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-radius: 12px;
+  font-weight: bold;
+  background-color: black;
+}
+
+#search-input {
+  align-items: center;
+}
 
 .hidden {
   display: none;
+}
+#select-platform {
+  text-align: center;
 }
 
