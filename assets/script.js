@@ -144,7 +144,7 @@ function gamerPowerApi(input) {
     }
   };
   console.log(input)
-  fetch(`https://gamerpower.p.rapidapi.com/api/filter?platform=${input}`, options)
+  fetch(`https://gamerpower.p.rapidapi.com/api/filter?platform=${input}&&sort-by=value`, options)
     .then(response => response.json())
     .then(response => displayGamerPower(response)
     )
@@ -157,7 +157,7 @@ function displayGamerPower(data) {
   giveawayResultsEl.empty();
 
   console.log(data);
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {
 
     var cardEl = $("<div/>").addClass("card col s12");
     giveawayResultsEl.append(cardEl);
