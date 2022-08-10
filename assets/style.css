@@ -121,6 +121,7 @@ body {
 
 #search-input {
   align-items: center;
+  color: #000000;
 }
 
 #select-platform {
