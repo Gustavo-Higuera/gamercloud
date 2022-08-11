@@ -12,7 +12,6 @@ function gameSearchHandler(event) {
 
   $("#error-message").empty(); // if the user adds input value... the error will clear if it was appended
 
-
   $(cheapsharkContentEl).empty();
   var userInput = $("#search-input").val(); // This is storing the users input into a variable
   var userInputFormatted = userInput.replace(/ /g, "+"); // this is replacing all spaces in the users input with + 
@@ -21,12 +20,11 @@ function gameSearchHandler(event) {
     $("#error-message").append("<p/>").addClass("red-text").text("Please enter a game!"); // if the input is left empty this will append
     return
   }
-  if (!searchedGames.includes(userInput)) { // if the users input isn't already stored in the searchedGames array, it pull push it
+  if (!searchedGames.includes(userInput)) { // if the users input isn't already stored in the searchedGames array, it will push it
     searchedGames.push(userInput)
     displaySearchedHistory();
 
     localStorage.setItem('searchedGames', JSON.stringify(searchedGames));
-
   }
 
   cheapsharkApi(userInputFormatted);
@@ -41,10 +39,10 @@ function displaySearchedHistory() {
 
     console.log(game);
 
-    var btn = $('<li class="searched-game-li"/>') // each game in the searched
-    btn.data("game", game);
-    btn.text(game)
-    searchedGamesEl.append(btn)
+    var liEl = $('<li class="searched-game-li"/>') // a list item element is being created with class name searched-game-li
+    liEl.data("game", game); // this is giving each list item a data attr set equal to each game in the searchedGames array
+    liEl.text(game)
+    searchedGamesEl.append(liEl) 
 
 
   })
@@ -53,9 +51,8 @@ function displaySearchedHistory() {
 $(document).on("click", ".searched-game-li", function () {
   $(cheapsharkContentEl).empty();
 
-  var game = $(this).data("game");
-  $("#giveaway-content").removeClass("hidden");
-  cheapsharkApi(game);
+  var game = $(this).data("game"); 
+  cheapsharkApi(game); // this is targeting the data attr game of each list item, and passing through the game to cheapsharkApi function, and executing it 
 })
 
 giveawayBtn.on("click", platformHandler); // when the giveaway search button is clicked, the platformHandler function will execute
@@ -212,16 +209,5 @@ $(document).ready(function () {
 });
 
 $('.dropdown-trigger').dropdown();
-
-$(document).ready(function () {
-  $('input.autocomplete').autocomplete({
-    data: {
-      "Apple": null,
-      "Microsoft": null,
-      "Google": null,
-      "Gargle": null
-    }
-  });
-});
 
 displaySearchedHistory();

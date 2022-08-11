@@ -34,6 +34,9 @@ background-color: #000000;
 
 #search-input {
   align-items: center;
+  padding-left: 10px;
+  background-color: var(--transparent-color);
+  color: black;
   border-radius: 20px;
 }
 
