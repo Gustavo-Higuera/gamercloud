@@ -35,6 +35,23 @@ https://gustavo-higuera.github.io/gamercloud/
 - JavaScript
 - Materialize
 
+## Roles
+Gustavo Higuera 
+- JavaScript/Fetching APIs/JQuery
+- HTML
+- Materialize
+
+Keanu Rivers
+- HTML
+- CSS
+- Materialize
+
+Sandra Calderon
+- HTML
+- CSS
+- Materialize
+
+
 ## Photos of the Webpage
 ![screenshot 1](./assets/images/2022-08-10.png)
 ![screenshot 2](./assets/images/2022-08-10%20(1).png)
