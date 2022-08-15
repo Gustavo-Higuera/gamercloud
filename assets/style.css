@@ -131,7 +131,7 @@ body {
 }
 
 .select-wrapper {
-  width: 45%;
+  width: 100%;
   color: black;
 }
 
@@ -144,5 +144,33 @@ body {
   text-align: center;
   margin-right: 5%;
   border-radius: 10px;
+
+}
+
+@media screen and (max-width: 1005px) {
+  .row .col.s5 {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+  .row .col.s6 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.row .col.s4 {
+  width: 100%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+  .row .col.s5 {
+    width: 100%;
+  }
 
 }
