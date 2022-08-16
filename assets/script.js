@@ -106,7 +106,6 @@ function displayCheapsharkApi(data) {
     var thumbnailUrl = data[i].thumb;
     var thumbEl = $("<img/>").attr("src", thumbnailUrl)
     thumbEl.css({
-      "width": "auto",
       "height": "auto",
       "display": "block",
       "max-height": "225px",
@@ -174,7 +173,6 @@ function displayGamerPower(data) {
     var thumbnailUrl = data[i].thumbnail;
     var thumbEl = $("<img/>").attr("src", thumbnailUrl)
     thumbEl.css({
-      "width": "auto",
       "height": "auto",
       "display": "block",
       "max-height": "225px",
@@ -193,9 +191,9 @@ function displayGamerPower(data) {
     var giveawayPlatformsEl = $("<p/>").text(`Platforms: ${giveawayPlatforms}`);
     cardTitleEl.append(giveawayPlatformsEl)
 
-    var giveawayDescription = data[i].description;
-    var giveawayDescriptionEl = $("<p/>").text(giveawayDescription);
-    cardContentEl.append(giveawayDescriptionEl);
+    // var giveawayDescription = data[i].description;
+    // var giveawayDescriptionEl = $("<p/>").text(giveawayDescription);
+    // cardContentEl.append(giveawayDescriptionEl);
 
     var giveawayLinkEl = $("<a/>").text("Click Here For Giveaway!");
     giveawayLinkEl.attr("href", data[i].open_giveaway);

@@ -11,11 +11,12 @@
 }
 
 .nav-wrapper {
-background-color: #000000;
+  background-color: #000000;
   font-weight: bold;
   padding-top: 20px;
   padding-bottom: 80px;
 }
+
 .brand-logo.center {
   font-size: 50px;
 }
@@ -132,7 +133,7 @@ body {
 }
 
 .select-wrapper {
-  width: 45%;
+  width: 100%;
   color: black;
 }
 
@@ -146,4 +147,68 @@ body {
   margin-right: 5%;
   border-radius: 10px;
 
+}
+
+@media screen and (max-width: 1005px) {
+  .row .col.s5 {
+    width: 100%;
+  }
+
+  #container {
+    margin: 5% 2%;
+  }
+
+}
+
+@media screen and (max-width: 950px) {
+  .row .col.s6 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .row .col.s4 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .row .col.s5 {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 760px) {
+  #container {
+    margin: 6% 2%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  #container {
+    margin: 8% 2%;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+
+  .flow-text,
+  .text {
+    font-size: 25px;
+  }
+
+  #container {
+    margin: 10% 2%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  #container {
+    margin: 14% 2%;
+  }
 }
